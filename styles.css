@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --middle-text: #212121;
+    --contrast-text: #242424;
+    --darkest: #2B3A67;
+    --dark: #496A81;
+    --middle: #66999B;
+    --light: #B3AF8F;
+
+    --lightest: #FFC482;
+
+    /* writing pairs: 
+    best: darkest and lightest;
+    middle bg and contrast text (or, best: middle text);
+    darkest bg and light text;
+    light bg and darkest text; 
+    dark bg & white text, 
+    middle bg and black text, 
+    light bg and contrast text  */
+}
+
+#navbar {
+    position: sticky;
+    /* seems bugged on mobile */
+    top: 0;
+    background-color: var(--light);
+    font-size: larger;
+    text-align: center;
+}
+
+a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--middle-text);
+    margin-right: 2px;
+
+}
+
+#welcome-section {
+    height: 100vh;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+h1 {
+    position: relative;
+    margin-left: 20px;
+    top: 35%;
+    color: var(--contrast-text);
+    font-size: 50px;
+    font-style: italic;
+    transition: letter-spacing .6s ease-in-out;
+}
+
+h1:hover {
+  letter-spacing: 11px;
+}
+
+#projects {
+    background-color: #5F8B70;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#projects a {
+    color: white;
+}
+
+.project-tile {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.project {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.project li {
+    list-style-position: inside;
+    margin-bottom: 3px;
+}
+
+.project-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.time-spent, .change {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: solid 1px black;
+    transition: transform .4s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.5);
+}
+
+#footer {
+    background-color: var(--light);
+    color: var(--middle-text);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+
+@media (max-width: 768px) {
+    #welcome-section {
+      height: 60vh;
+    }
+
+    #navbar a {
+      margin-right: 7px;
+    }
+    
+    .project-tile {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

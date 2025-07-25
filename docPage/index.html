@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        <title>CSS selectors</title>
+    </head>
+    <body>
+        <nav id="navbar">
+            <header class="navbar-header">CSS selectors</header>
+            <div class="for-links"></div>
+            <a class="nav-link" href="#What_is_a_selector?" alt="What is a selector?">What is a selector?</a><br>
+            <div class="for-links"></div>
+            <a class="nav-link" href="#Type_class_and_ID_selectors" alt="Type class and ID selectors">Type class and ID selectors</a><br>
+            <div class="for-links"></div>
+            <a class="nav-link" href="#Attribute_selectors" alt="Attribute selectors">Attribute selectors</a><br>
+            <div class="for-links"></div>
+            <a class="nav-link" href="#Pseudo-classes_and_pseudo-elements" alt="Pseudo-classes and pseudo-elements">Pseudo-classes and pseudo-elements</a><br>
+            <div class="for-links"></div>
+            <a class="nav-link" href="#Combinators" alt="Combinators">Combinators</a>
+            <div class="for-links"></div>
+        </nav>
+
+        <main id="main-doc">
+            <section class="main-section" id="What_is_a_selector?">
+                <header>What is a selector?</header>
+                <p>A CSS selector is the <i>first part</i> of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them.</p>
+                <ul class="emphasize">
+                    <li>The element or elements which are selected by the selector are referred to as the <b>subject of the selector</b>.</li>
+                </ul>
+                <p>If you have more than one thing which uses the same CSS then the individual selectors can be combined into a selector list so that the rule is applied to all of the individual selectors. See the following code:</p>
+                <div class="coded"><code>h1, .class { <br> color: blue; <br> }</code></div>
+                <p>There is a wide variety of CSS selectors available, allowing for fine-grained precision when selecting elements to style.</p>
+            </section>
+            <section class="main-section" id="Type_class_and_ID_selectors">
+                <header>Type class and ID selectors</header>
+                <p>A <b>type selector</b> selects an HTML tag/element in your document. Type selectors are not case-sensitive.</p>
+                <p>The <b>universal selector</b> is indicated by an asterisk (*). It selects everything in the document.</p>
+                <p>The <b>class selector</b> will select everything in the document with that class applied to it. The case-sensitive class selector starts with a dot (.) character.</p>
+                <ul class="emphasize">
+                    <li>You can create a selector that will target specific elements with the class applied. We do this by using the type selector for the element we want to target, with the class appended using a dot, with no white space in between.</li>
+                    <li>You can apply multiple classes to an element and target them individually, or only select the element when all of the classes in the selector are present.</li>
+                </ul>
+                <p><b>ID selectors</b> can select an element that has the id set on it, and you can precede the ID with a type selector to only target the element if both the element and ID match. For example:</p>
+                <div class="coded"><code>#one {<br>  background-color: yellow;<br>}<br><br>h1#heading {<br>  color: blue;<br>}</code></div>
+            </section>
+            <section class="main-section" id="Attribute_selectors">
+                <header>Attribute selectors</header>
+                <p>These selectors enable the selection of an element based on the presence of an attribute alone (for example href), or on various different matches against the value of the attribute.</p>
+                <p>Type of attribute selectors:</p>
+                <div class="coded"><code>[attr]<br>[attr=value]<br>[attr~=value]<br>[attr|=value]</code></div>
+                <ul class="emphasize">
+                    <li>If you want to match attribute values case-insensitively you can use the value "i" before the closing bracket. This flag tells the browser to match ASCII characters case-insensitively. Without the flag the values will be matched according to the case-sensitivity of the document language — in HTML's case it will be case sensitive.</li>
+                </ul>
+                <h2>Substring matching selectors</h2>
+                <p>These selectors allow for more advanced matching of substrings inside the value of your attribute.</p>
+                <p>Examples:</p>
+                <div class="coded"><code>[attr^=value]<br>[attr$=value]<br>[attr*=value]</code></div>
+            </section>
+            <section class="main-section" id="Pseudo-classes_and_pseudo-elements">
+                <header>Pseudo-classes and pseudo-elements</header>
+                <p>A <b>pseudo-class</b> is a selector that selects elements that are in a specific state, e.g. they are the first element of their type, or they are being hovered over by the mouse pointer.</p>
+                <ul class="emphasize">
+                    <li>Pseudo-classes are keywords that start with a colon. For example, :hover is a pseudo-class.</li>
+                </ul>       
+                <p>Some pseudo-classes:</p>         
+                <div class="coded"><code>:first-child<br>:last-child<br>:only-child<br>:invalid<br>:focus <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#user-action_pseudo_classes">(user-action pseudo-class)</a></code></div>
+                <p><b>Pseudo-elements</b> behave in a similar way, however they act as if you had added a whole new HTML element into the markup, rather than applying a class to existing elements.</p>
+                <ul class="emphasize">
+                    <li>Pseudo-elements start with a double colon ::. For example, ::before is a pseudo-element.</li>
+                </ul>       
+            </section>
+            <section class="main-section" id="Combinators">
+                <header>Combinators</header>
+                <p><b>Combinators</b> combine other selectors in a way that gives them a useful relationship to each other and the location of content in the document.</p>
+                <p>Some types of combinators:</p>
+                <div class="coded"><code>descendant<br>child<br>next-sibling<br>subsequent-sibling<br></code></div>
+                <ul class="emphasize">
+                    <li>The CSS nesting module allows you to write nested rules that use combinators to create complex selectors.</li>
+                </ul>
+            </section>
+            <footer>
+            <p>Text source: <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">MDN Web Docs — CSS selectors</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tellus diam, vestibulum vitae. </p>
+            </footer>
+        </main>
+    </body>
+</html>
